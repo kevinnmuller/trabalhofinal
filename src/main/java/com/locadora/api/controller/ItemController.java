@@ -32,7 +32,7 @@ public class ItemController {
     @GetMapping("/{id}")
     public ResponseEntity<Item> buscar(@PathVariable Long id) {
         Item item = itemService.buscarPorId(id)
-                .orElseThrow(() -> new NotFoundException("Item não encontrado"));
+                .orElseThrow(() -> new NotFoundException("Item não encontrado."));
         return ResponseEntity.ok(item);
     }
 
